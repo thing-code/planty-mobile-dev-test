@@ -1,3 +1,3 @@
-# planty_app
+# Planty App
 
-A new Flutter project.
+Mobile Developer Test.
