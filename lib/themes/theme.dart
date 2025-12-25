@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+
+abstract class AppColors {
+  const AppColors._();
+
+  static const Color primary = Color(0xff244B3A);
+  static const Color darkPrimary = Color(0xff112F22);
+  static const Color secondary = Color(0xff41745E);
+  static const Color grey = Color(0xffF4F4F4);
+  static const Color subtitle = Color(0xff707070);
+}
+
+abstract class AppThemes {
+  const AppThemes._();
+
+  static ThemeData get light => ThemeData(
+    colorScheme: ColorScheme.light(
+      primary: AppColors.primary,
+      secondary: AppColors.secondary,
+      onPrimary: Colors.white,
+      onSecondary: Colors.white,
+    ),
+    filledButtonTheme: FilledButtonThemeData(
+      style: FilledButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        minimumSize: Size.fromHeight(50),
+      ),
+    ),
+  );
+}

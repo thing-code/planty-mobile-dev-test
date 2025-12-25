@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "9.1.0"
-  bloc_lint:
-    dependency: "direct dev"
-    description:
-      name: bloc_lint
-      sha256: "4ba9c78d73f97c5175eb2c419f94e6d8211edd06ace1783ea32dc64f865e0f38"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.5"
   boolean_selector:
     dependency: transitive
     description:
@@ -270,6 +262,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
+  flutter_staggered_grid_view:
+    dependency: "direct main"
+    description:
+      name: flutter_staggered_grid_view
+      sha256: "19e7abb550c96fbfeb546b23f3ff356ee7c59a019a651f8f102a4ba9b7349395"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.7.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -296,6 +296,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.0"
+  get_it:
+    dependency: "direct main"
+    description:
+      name: get_it
+      sha256: "1d648d2dd2047d7f7450d5727ca24ee435f240385753d90b49650e3cdff32e56"
+      url: "https://pub.dev"
+    source: hosted
+    version: "9.2.0"
   glob:
     dependency: transitive
     description:
@@ -313,7 +321,7 @@ packages:
     source: hosted
     version: "17.0.1"
   go_router_builder:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: go_router_builder
       sha256: "8f1dd8cc23850dba4223104231682a9410576720cb24693fb0eb925c49b2abe3"
@@ -368,6 +376,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.1"
+  intl:
+    dependency: "direct main"
+    description:
+      name: intl
+      sha256: "3df61194eb431efc39c4ceba583b95633a403f46c9fd341e550ce0bfa50e9aa5"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.20.2"
   io:
     dependency: transitive
     description:
@@ -536,14 +552,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.2.0"
-  pubspec_lock_parse:
-    dependency: transitive
-    description:
-      name: pubspec_lock_parse
-      sha256: "020cb470287124c936c30ebfc2f927b287f275b7bf7fc2ab11577e592c017764"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.0"
   pubspec_parse:
     dependency: transitive
     description:
@@ -645,6 +653,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.7"
+  thing_toast:
+    dependency: "direct main"
+    description:
+      name: thing_toast
+      sha256: "953281cae0a840229352ad4056370a86906bf0ced5fcd66acfe78b7dfd8fc0d2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   time:
     dependency: transitive
     description:
@@ -661,6 +677,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  uuid:
+    dependency: transitive
+    description:
+      name: uuid
+      sha256: a11b666489b1954e01d992f3d601b1804a33937b5a8fe677bd26b8a9f96f96e8
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.5.2"
   vector_graphics_codec:
     dependency: transitive
     description:
