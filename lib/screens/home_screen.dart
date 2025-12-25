@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:planty_app/gen/assets.gen.dart';
 import 'package:planty_app/themes/theme.dart';
-import 'package:planty_app/widgets/home_banner.dart';
-import 'package:planty_app/widgets/home_card.dart';
 import 'package:planty_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,6 +25,26 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(child: ServicesSection()),
           SliverToBoxAdapter(child: Assets.trendingDiscoveries.image()),
           SliverToBoxAdapter(child: ItemsSection()),
+          SliverToBoxAdapter(child: LocationSection()),
+        ],
+      ),
+    );
+  }
+}
+
+class LocationSection extends StatelessWidget {
+  const LocationSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 28, horizontal: 20),
+      child: Column(
+        spacing: 20,
+        children: [
+          LocationMap(),
+          LocationDetail(name: 'Sunway Pyramid'),
+          LocationDetail(name: 'The Gardens Mall'),
         ],
       ),
     );

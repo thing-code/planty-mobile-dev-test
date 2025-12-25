@@ -8,6 +8,7 @@ abstract class AppColors {
   static const Color secondary = Color(0xff41745E);
   static const Color grey = Color(0xffF4F4F4);
   static const Color subtitle = Color(0xff707070);
+  static const Color link = Color(0xff46A0BF);
 }
 
 abstract class AppThemes {
