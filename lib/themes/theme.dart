@@ -26,5 +26,12 @@ abstract class AppThemes {
         minimumSize: Size.fromHeight(50),
       ),
     ),
+    actionIconTheme: ActionIconThemeData(
+      backButtonIconBuilder: (context) =>
+          Icon(Icons.chevron_left, color: AppColors.primary),
+    ),
+    searchBarTheme: SearchBarThemeData(
+      padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16)),
+    ),
   );
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:planty_app/extensions/extension.dart';
 import 'package:planty_app/gen/assets.gen.dart';
 import 'package:planty_app/themes/theme.dart';
+import 'package:planty_app/widgets/home_banner.dart';
+import 'package:planty_app/widgets/home_card.dart';
 import 'package:planty_app/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -25,24 +26,53 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(child: MenuSection()),
           SliverToBoxAdapter(child: ServicesSection()),
           SliverToBoxAdapter(child: Assets.trendingDiscoveries.image()),
-          SliverMasonryGrid.count(
-            crossAxisCount: 2,
-            childCount: 8,
-            itemBuilder: (context, index) {
-              double getAspectRatio(int index) {
-                int pattern = index % 4;
-
-                if (pattern == 1 || pattern == 2) {
-                  return 3 / 6;
-                } else {
-                  return 3 / 5;
-                }
-              }
-
-              return PlantCard(customRatio: getAspectRatio(index));
-            },
-          ),
+          SliverToBoxAdapter(child: ItemsSection()),
         ],
+      ),
+    );
+  }
+}
+
+class ItemsSection extends StatelessWidget {
+  const ItemsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    final padding = 20.0 * 2;
+    final crossAxisSpacing = 8.0;
+    final availableWidth = screenWidth - padding;
+    final itemWidth = (availableWidth - crossAxisSpacing) / 2;
+    return Container(
+      color: AppColors.darkPrimary,
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: MasonryGridView.count(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        crossAxisCount: 2,
+        mainAxisSpacing: 8,
+        crossAxisSpacing: 8,
+        itemCount: 8,
+        itemBuilder: (context, index) {
+          double getAspectRatio(int index) {
+            int pattern = index % 4;
+
+            if (pattern == 1 || pattern == 2) {
+              return 3 / 6;
+            } else {
+              return 3 / 5;
+            }
+          }
+
+          final aspectRatio = getAspectRatio(index);
+          final itemHeight = itemWidth / aspectRatio;
+
+          return SizedBox(
+            height: itemHeight,
+            width: itemWidth,
+            child: PlantCard(useAspectRatio: false),
+          );
+        },
       ),
     );
   }
@@ -157,50 +187,6 @@ class ServicesSection extends StatelessWidget {
   }
 }
 
-class PlantCard extends StatelessWidget {
-  const PlantCard({super.key, this.customRatio});
-
-  final double? customRatio;
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: customRatio ?? 3 / 5,
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.vertical(top: Radius.circular(8)),
-            child: Assets.image.image(),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 12),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: AppColors.grey),
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(8)),
-            ),
-            child: Column(
-              spacing: 4,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Lorem Ipsum',
-                  style: TextStyle(fontSize: 12, color: AppColors.subtitle),
-                ),
-                Text(
-                  'Lorem Ipsum Dolor Sit Amet Consectetur',
-                  style: TextStyle(fontWeight: FontWeight.w600),
-                ),
-                Text(50.toMYR, style: TextStyle(color: AppColors.primary)),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class MenuSection extends StatelessWidget {
   const MenuSection({super.key});
 
@@ -244,27 +230,6 @@ class MenuSection extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class PlantBanner extends StatelessWidget {
-  const PlantBanner({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 10,
-      child: CarouselView(
-        shape: RoundedRectangleBorder(),
-        padding: EdgeInsets.zero,
-        itemSnapping: true,
-        itemExtent: MediaQuery.sizeOf(context).width,
-        children: List.generate(
-          3,
-          (index) => Assets.homeBanner.image(fit: BoxFit.cover),
-        ),
-      ),
     );
   }
 }
