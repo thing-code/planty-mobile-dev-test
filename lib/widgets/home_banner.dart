@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:planty_app/gen/assets.gen.dart';
 
-class PlantBanner extends StatelessWidget {
-  const PlantBanner({super.key});
+class HomeBanner extends StatelessWidget {
+  const HomeBanner({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -20,9 +20,9 @@ class HomeScreen extends StatelessWidget {
             floating: true,
             backgroundColor: AppColors.primary,
             expandedHeight: MediaQuery.sizeOf(context).height * .24,
-            flexibleSpace: FlexibleSpaceBar(background: PlantyAppBar()),
+            flexibleSpace: FlexibleSpaceBar(background: HomeAppBar()),
           ),
-          SliverToBoxAdapter(child: PlantBanner()),
+          SliverToBoxAdapter(child: HomeBanner()),
           SliverToBoxAdapter(child: MenuSection()),
           SliverToBoxAdapter(child: ServicesSection()),
           SliverToBoxAdapter(child: Assets.trendingDiscoveries.image()),
@@ -70,7 +70,7 @@ class ItemsSection extends StatelessWidget {
           return SizedBox(
             height: itemHeight,
             width: itemWidth,
-            child: PlantCard(useAspectRatio: false),
+            child: HomePlantCard(useAspectRatio: false),
           );
         },
       ),
@@ -123,7 +123,7 @@ class ServicesSection extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: EdgeInsets.symmetric(horizontal: 20),
               itemBuilder: (context, index) {
-                return PlantCard();
+                return HomePlantCard();
               },
               separatorBuilder: (context, index) => SizedBox(width: 8),
               itemCount: 5,

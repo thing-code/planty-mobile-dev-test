@@ -28,10 +28,15 @@ abstract class AppThemes {
     ),
     actionIconTheme: ActionIconThemeData(
       backButtonIconBuilder: (context) =>
-          Icon(Icons.chevron_left, color: AppColors.primary),
+          Icon(Icons.arrow_back_ios, color: AppColors.primary),
     ),
     searchBarTheme: SearchBarThemeData(
       padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 16)),
+    ),
+    cardTheme: CardThemeData(
+      clipBehavior: Clip.antiAlias,
+      margin: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
     ),
   );
 }

@@ -3,8 +3,8 @@ import 'package:planty_app/extensions/extension.dart';
 import 'package:planty_app/themes/theme.dart';
 import 'package:thing_toast/thing_toast.dart';
 
-class PlantyAppBar extends StatelessWidget {
-  const PlantyAppBar({super.key});
+class HomeAppBar extends StatelessWidget {
+  const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,8 +3,8 @@ import 'package:planty_app/extensions/extension.dart';
 import 'package:planty_app/gen/assets.gen.dart';
 import 'package:planty_app/themes/theme.dart';
 
-class PlantCard extends StatelessWidget {
-  const PlantCard({super.key, this.useAspectRatio = true});
+class HomePlantCard extends StatelessWidget {
+  const HomePlantCard({super.key, this.useAspectRatio = true});
 
   final bool useAspectRatio;
 
