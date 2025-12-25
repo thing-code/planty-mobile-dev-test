@@ -11,7 +11,7 @@ Before you begin, ensure you have the following installed:
   - Verify installation: `flutter --version`
 - **Dart SDK** (comes with Flutter)
 - **Git** for cloning the repository
-- **IDE** (VS Code, Android Studio, or IntelliJ IDEA) with Flutter extensions
+- **IDE** (VS Code, Cursor, Antigravity) with Flutter extensions
 - **Android Studio** (for Android development) or **Xcode** (for iOS development on macOS)
 
 ## Getting Started
